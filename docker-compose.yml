@@ -4,8 +4,8 @@ services:
     image: minio/minio:latest
     container_name: minio
     ports:
-      - "9000:9000"       # Porta da API do MinIO
-      - "9001:9001"       # Porta do console do MinIO
+      - "${API_PORT}:9000"       # Porta da API do MinIO
+      - "${CONSOLE_PORT}:9001"       # Porta do console do MinIO
     environment:
       MINIO_ROOT_USER: admin
       MINIO_ROOT_PASSWORD: password123
